@@ -32,7 +32,6 @@ class GildedRoseTest {
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 10, 49),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 5, 49),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 3, 49),
-                // this conjured item does not work properly yet
                 new TestItem("Conjured Mana Cake", 3, 6)
         };
 
@@ -49,8 +48,7 @@ class GildedRoseTest {
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 6, 50),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 1, 50),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", -1, 0),
-                //TODO: this conjured item does not work properly yet
-                new TestItem("Conjured Mana Cake", -1, 1)
+                new TestItem("Conjured Mana Cake", -1, 0)
         };
 
         GildedRose app = new GildedRose(items);

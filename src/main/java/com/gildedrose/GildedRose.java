@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.utils.ItemQuality;
+
 import java.util.Arrays;
 
 class GildedRose {
@@ -10,6 +12,6 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        Arrays.stream(items).forEach(ItemProcessor::process);
+        Arrays.stream(items).forEach(ItemQuality::process);
     }
 }
