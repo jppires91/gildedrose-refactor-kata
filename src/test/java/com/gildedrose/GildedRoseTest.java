@@ -21,11 +21,13 @@ class GildedRoseTest {
     void dummyTest() {
         final Item[] items = new Item[] {
                 new TestItem("+5 Dexterity Vest", 10, 20), //
+                new TestItem("+5 Dexterity Vest", 2, 20), //
                 new TestItem("Aged Brie", 2, 0), //
                 new TestItem("Elixir of the Mongoose", 5, 7), //
                 new TestItem("Sulfuras, Hand of Ragnaros", 0, 80), //
                 new TestItem("Sulfuras, Hand of Ragnaros", -1, 80),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+                new TestItem("Backstage passes to a TAFKAL80ETC concert", 11, 20),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 10, 49),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 5, 49),
                 // this conjured item does not work properly yet
@@ -34,14 +36,16 @@ class GildedRoseTest {
 
         final Item[] expectedItems = new Item[] {
                 new TestItem("+5 Dexterity Vest", 6, 16), //
+                new TestItem("+5 Dexterity Vest", -2, 14), //
                 new TestItem("Aged Brie", -2, 6), //
                 new TestItem("Elixir of the Mongoose", 1, 3), //
                 new TestItem("Sulfuras, Hand of Ragnaros", 0, 80), //
                 new TestItem("Sulfuras, Hand of Ragnaros", -1, 80),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 11, 24),
+                new TestItem("Backstage passes to a TAFKAL80ETC concert", 7, 30),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 6, 50),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 1, 50),
-                // this conjured item does not work properly yet
+                //TODO: this conjured item does not work properly yet
                 new TestItem("Conjured Mana Cake", -1, 1)
         };
 
