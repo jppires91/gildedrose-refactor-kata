@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableList;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 class GildedRose {
     final Item[] items;
@@ -33,7 +32,6 @@ class GildedRose {
                     item.quality--;
                 }
             } else
-
                 //Special item processing
                 if (isSpecialItem(item)) {
                     if (item.quality < 50) {
@@ -56,15 +54,9 @@ class GildedRose {
 
                     //if sellin < 0
                     if (item.sellIn < 0) {
-                        if (!AGED_BRIE.equals(item.name)) {
-                            if (!BACKSTAGE_PASSES.equals(item.name)) {
-                                if (!SULFURAS.equals(item.name) && item.quality > 0) {
-                                    item.quality--;
-                                }
-                            } else {
-                                item.quality = 0;
-                            }
-                        } else if (item.quality < 50) {
+                        if (BACKSTAGE_PASSES.equals(item.name)) {
+                            item.quality = 0;
+                        } else if (AGED_BRIE.equals(item.name)) {
                             item.quality++;
                         }
                     }
