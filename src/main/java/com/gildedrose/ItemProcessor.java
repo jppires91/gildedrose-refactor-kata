@@ -1,28 +1,33 @@
 package com.gildedrose;
 
-import com.google.common.collect.ImmutableMap;
-
-import java.util.Map;
+import java.util.Arrays;
 import java.util.function.Consumer;
 
 /**
  * @author Joao Pires
  */
-public class ItemProcessor {
+public enum ItemProcessor {
 
-    private static final String AGED_BRIE = "Aged Brie";
-    private static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
-    private static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
+    AGED_BRIE("Aged Brie", ItemProcessor::processAgedBrie),
+    BACKSTAGE_PASSES("Backstage passes to a TAFKAL80ETC concert", ItemProcessor::processBackstageItem),
+    SULFURAS("Sulfuras, Hand of Ragnaros"),
+    DEFAULT("default", ItemProcessor::processNormalItem);
 
     private static final int QUALITY_MAX = 50;
 
     private static final int QUALITY_MIN = 0;
 
-    private static final Map<String, Consumer<Item>> map = ImmutableMap.<String, Consumer<Item>>builder()
-            .put(AGED_BRIE, ItemProcessor::processAgedBrie)
-            .put(BACKSTAGE_PASSES, ItemProcessor::processBackstageItem)
-            .put(SULFURAS, it -> {})
-            .build();
+    private String name;
+    private Consumer<Item> consumer;
+
+    ItemProcessor(final String name, Consumer<Item> consumer) {
+        this.name = name;
+        this.consumer = consumer;
+    }
+
+    ItemProcessor(final String name) {
+        this(name,it -> {});
+    }
 
     private static void processBackstageItem(final Item item) {
         item.sellIn--;
@@ -60,7 +65,11 @@ public class ItemProcessor {
     }
 
     public static void process(final Item item) {
-        map.getOrDefault(item.name, ItemProcessor::processNormalItem).accept(item);
+        Arrays.stream(values())
+                .filter(it -> it.name.equals(item.name))
+                .findFirst()
+                .orElse(ItemProcessor.DEFAULT)
+                .consumer
+                .accept(item);
     }
-
 }
