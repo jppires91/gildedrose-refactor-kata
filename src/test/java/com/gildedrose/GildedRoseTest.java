@@ -44,7 +44,7 @@ class GildedRoseTest {
                 new TestItem("Sulfuras, Hand of Ragnaros", -1, 80),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 11, 24),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 7, 27),
-                new TestItem("Backstage passes to a TAFKAL80ETC concert", 1, 30),
+                new TestItem("Backstage passes to a TAFKAL80ETC concert", 1, 32),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 6, 50),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 1, 50),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", -1, 0),
