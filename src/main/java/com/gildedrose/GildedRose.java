@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-import com.gildedrose.utils.ItemQuality;
+import com.gildedrose.utils.ItemType;
 
 import java.util.Arrays;
 
@@ -12,6 +12,7 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        Arrays.stream(items).forEach(ItemQuality::process);
+        //For each item, it processes from the enum
+        Arrays.stream(items).forEach(ItemType::process);
     }
 }

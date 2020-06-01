@@ -1,8 +1,8 @@
 package com.gildedrose;
 
-import java.util.Objects;
-
 /**
+ * Test item is an item that implements equals to be easier to test (assert equals).
+ *
  * @author Joao Pires
  */
 public class TestItem extends Item {

@@ -17,6 +17,9 @@ class GildedRoseTest {
         assertEquals("foo", app.items[0].name);
     }
 
+    /**
+     * Dummy test with dummy items (started point).
+     */
     @Test
     void dummyTest() {
         final Item[] items = new Item[] {
@@ -35,7 +38,7 @@ class GildedRoseTest {
                 new TestItem("Conjured Mana Cake", 3, 6)
         };
 
-        final Item[] expectedItems = new Item[] {
+        final List<Item> expectedItems = ImmutableList.of(
                 new TestItem("+5 Dexterity Vest", 6, 16), //
                 new TestItem("+5 Dexterity Vest", -2, 14), //
                 new TestItem("Aged Brie", -2, 6), //
@@ -49,7 +52,7 @@ class GildedRoseTest {
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", 1, 50),
                 new TestItem("Backstage passes to a TAFKAL80ETC concert", -1, 0),
                 new TestItem("Conjured Mana Cake", -1, 0)
-        };
+        );
 
         GildedRose app = new GildedRose(items);
 
@@ -58,7 +61,7 @@ class GildedRoseTest {
         }
 
         //Making test with lists because array.equals is done by reference
-        assertEquals(ImmutableList.copyOf(expectedItems), ImmutableList.copyOf(items));
+        assertEquals(expectedItems, ImmutableList.copyOf(items));
 
     }
 
