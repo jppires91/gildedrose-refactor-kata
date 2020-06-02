@@ -1,11 +1,12 @@
 compile:
-	mvn clean install -DskipTests
+	mvn compile
 
 package:
-	mvn package -Ppackage
+	mvn clean install -Ppackage
 
 run: package
 	java -jar gilded-rose-kata.jar
 
+#using clean install to generate jacoco report
 test:
-	mvn test
+	mvn clean install

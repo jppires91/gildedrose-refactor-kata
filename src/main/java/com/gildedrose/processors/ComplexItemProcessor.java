@@ -41,7 +41,7 @@ public class ComplexItemProcessor extends ItemProcessor {
      *
      * @param item the item to be processed
      */
-    public void _process(final Item item) {
+    protected void _process(final Item item) {
         item.sellIn--;
 
         if (item.sellIn < 0) {

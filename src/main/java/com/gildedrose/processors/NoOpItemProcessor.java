@@ -25,7 +25,7 @@ public class NoOpItemProcessor extends ItemProcessor {
      * @param item the item to be processed
      */
     @Override
-    public void _process(final Item item) {
+    protected void _process(final Item item) {
         //no-op
     }
 }

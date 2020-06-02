@@ -20,7 +20,7 @@ public class SimpleItemProcessor extends ItemProcessor {
     private final int factorAfterSell;
 
     /**
-     * Constructs a SimpleItemProcessord with minQuality, maxQuality, factor and factorAfterSell.
+     * Constructs a SimpleItemProcessor with minQuality, maxQuality, factor and factorAfterSell.
      *
      * @param minQuality      the min quality allowed
      * @param maxQuality      the max quality allowed
@@ -40,7 +40,7 @@ public class SimpleItemProcessor extends ItemProcessor {
      *
      * @param item the item to be processed
      */
-    public void _process(final Item item) {
+    protected void _process(final Item item) {
         item.sellIn--;
 
         if (item.sellIn < 0) {
