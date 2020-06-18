@@ -16,7 +16,7 @@
 
         <guava.version>23.0</guava.version>
         <jcommander.version>1.48</jcommander.version>
-        <jackson.version>2.9.10.4</jackson.version>
+        <jackson.version>2.10.0.pr1</jackson.version>
         <jacoco.version>0.8.1</jacoco.version>
 
         <jacoco.line.coveredratio>0.7</jacoco.line.coveredratio>
